@@ -27,6 +27,9 @@ The submission is evaluated using the Root Mean Squared Error between the predic
 
 ## Results (images of your EDA or your results):
 
+<img width="123" alt="Screenshot 2024-09-25 at 3 32 05 PM" src="https://github.com/user-attachments/assets/04ee782f-b97b-4051-a3b8-08d14ce0bca8">
+
+
 <img width="737" alt="Screenshot 2024-09-25 at 3 30 46 PM" src="https://github.com/user-attachments/assets/067afa08-95f1-407f-9da8-7e3166d576ad">
 
 

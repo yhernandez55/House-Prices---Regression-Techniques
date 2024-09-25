@@ -26,7 +26,8 @@ The training dataset contains 81 features, while the test dataset contains 80 fe
 The submission is evaluated using the Root Mean Squared Error between the predicted values' logarithms and the sales prices' observed logarithms.
 
 ## Results (images of your EDA or your results):
-![screenshot](Submission)
+
+<img width="737" alt="Screenshot 2024-09-25 at 3 30 46 PM" src="https://github.com/user-attachments/assets/067afa08-95f1-407f-9da8-7e3166d576ad">
 
 
 

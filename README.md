@@ -1,21 +1,34 @@
-# House-Prices---Advanced-Regression-Techniques
+# House-Prices---Regression-Techniques
 
 ## Goal:
-Using Python the overall goal is to predict the sales price for each house. The column Id is used in the test set to indicate the values in SalePrice. 
+The main objective is to forecast each house's sales price using Python. In the test set, the values in SalePrice are indicated by the column Id. 
+
+## Summary ( your results and a discussion of the project - what you did to the data, which models you used, and how well you think the models performed.): 
+
 
 ## DataSet info:
-The datasets can be found in this link or can be found in files in this repository.
+The datasets are available as files in this repository or via this URL.
 <a href="https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data" target="_blank"> Here are the DataSets</a>
-- train.csv 
-- test.csv 
-- data_description.txt - full description of each feature that is in the training and the testing set. 
-- submission.csv - the predicted values of the SalesPrice along with their Id.
-For the train data set there is a total of 81 features while in the test set, there is a total of 80 features. The training set has the SalesPrice feature while the test set doesn't. 
+- train.csv
+- test.csv
+- data_description.txt - A full description of each feature in both the training and testing sets.
+- submission.csv - Contains the predicted SalesPrice values along with their corresponding IDs.
+The training dataset contains 81 features, while the test dataset contains 80 features. The SalesPrice feature is present in the training set but absent from the test set.
 
 ## Techniques used:
-- Using histograms to see the distribution of the data as well as the skew for the features for imputation purposese. 
-- XGBOOST: using the Dmatrix so for a faster training speed and its efficiency for memory. 
+- Using histograms to visualize the data distribution and assess the skew of the features for imputation purposes.
+- XGBOOST: employing the Dmatrix to increase training speed and memory efficiency.
+
+## Features used and why:
+
 
 ## Evaluation:
-The submission is evaluated by using the Root-Means-Squared-Error between the logarithmic of the predicted values and the logarithmic values observed in the sales price. 
+The submission is evaluated using the Root Mean Squared Error between the predicted values' logarithms and the sales prices' observed logarithms.
 
+## Results (images of your EDA or your results):
+![screenshot](Submission)
+
+
+
+
+You may also choose to discuss any differences in feature importance from one of the linear regression models to one of the tree-based models.

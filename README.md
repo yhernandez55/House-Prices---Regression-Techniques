@@ -1,6 +1,6 @@
 # House-Prices---Regression-Techniques
 
-## Summary ( your results and a discussion of the project - what you did to the data, which models you used, and how well you think the models performed.): 
+## Summary: 
 This project aimed to predict house sale prices using machine learning techniques in Python. After preparing the data to reduce dimensionality, I tested models such as Linear Regression and Random Forest, while making several submissions (not included in the notebook). Based on the Root Mean Squared Error (RMSE), I found that XGBoost was the most efficient model due to its ability to handle more parameters effectively. Key features used in the model included 'TotalSF', 'LotArea', and 'GrLivArea'. In conclusion, XGBoost provided the best balance between efficiency and accuracy for forecasting house prices.
 
 ## DataSet info:

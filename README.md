@@ -35,12 +35,16 @@ These were replaced by features like
 - 'TotalQual_Cond', 'AgeRemod', 'Age', 'TotalPorchSF', 'TotalBathrooms', and 'TotalSF'
 to improve model performance. Combining these features reduced the dimensionality of the dataset, contributing to a more efficient model and helping to prevent overfitting. The remaining features were left unchanged, as they improved the model's accuracy.
 
+
+## Feature Importance:
 The top 10 important features identified by the XGBoost model in order were: 
 - Id, LotArea, BsmtUnfSF, GrLivArea, LotFrontage,
 - TotalPorchSF, GarageArea, TotalSF, BsmtFinSF1, MasVnrArea.
 
+
 ## Evaluation:
 The model's performance was evaluated using the Root Mean Squared Error (RMSE) between the logarithms of the predicted values and the observed sales prices.
+
 
 ## Results and conclusion:
 The images below display the model's results. The first image shows the RMSE score on Kaggle, while the second image presents the predicted SalePrice values alongside their respective IDs, 

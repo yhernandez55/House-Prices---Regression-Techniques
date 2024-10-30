@@ -16,9 +16,10 @@ The training dataset contains 81 features, while the test dataset contains 80 fe
 
 
 ## Techniques used:
-- Visualizing data distributions with histograms: Used to assess feature skewness for imputation and to understand the data better.
-- Data preparation for the training set before evaluating the model: This involved handling missing values, encoding categorical variables, and feature scaling to ensure the dataset was ready for modeling. To keep the notebook clean, organized, and efficient, the data preparation process was summarized within a pipeline, which was written in a separate Python file.
-- Test set preparation for final prediction: The same pipeline used for the training data was applied to the test set. This ensures consistency in imputation and encoding, maintaining the integrity of the model evaluation and preventing data leakage.
+- Visualizing data distributions with histograms: Used to assess feature skewness for imputation and to understand the data better. An image of the histograms is included to illustrate these distributions.
+![image](https://github.com/user-attachments/assets/0621e81b-644f-4ee2-835c-110550c19f6c)
+- Data preparation for the training set before evaluating the model involved handling missing values, encoding categorical variables, and feature scaling to ensure the dataset was ready for modeling. To keep the notebook clean, organized, and efficient, the data preparation process was summarized within a pipeline, which was written in a separate Python file.
+- Test set preparation for final prediction: The same Python script used for the training data was applied to the test set. This ensures consistency in imputation and encoding, maintaining the integrity of the model evaluation and preventing data leakage.
 - XGBoost: Employed the DMatrix to improve training speed and memory efficiency.
 
 
@@ -40,6 +41,7 @@ to improve model performance. Combining these features reduced the dimensionalit
 The top 10 important features identified by the XGBoost model in order were: 
 - Id, LotArea, BsmtUnfSF, GrLivArea, LotFrontage,
 - TotalPorchSF, GarageArea, TotalSF, BsmtFinSF1, MasVnrArea.
+Below is a chart of the list of top 10 most import features in order.
 ![image](https://github.com/user-attachments/assets/b0410fff-087f-4d5c-8622-813ee75f2b55)
 
 
@@ -55,4 +57,4 @@ The images below display the model's results. The first image shows the RMSE sco
 <img width="152" alt="Screenshot 2024-10-01 at 12 31 46 PM" src="https://github.com/user-attachments/assets/f244bf9d-4f2c-4fd5-ac64-b3a405ba9b0e">
 
 
-Initially, I used linear regression, but the RMSE results showed it wasn’t the best choice. I then tested the Random Forest model, which was also less accurate. Ultimately, I found that XGBoost provided the most accurate and efficient predictions.
+Initially, I used linear regression, but the RMSE results showed it wasn’t the best choice that being a score of 0.18864. I then tested the Random Forest model, which was also less accurate. Ultimately, I found that XGBoost provided the most accurate and efficient predictions.

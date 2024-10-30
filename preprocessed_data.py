@@ -14,26 +14,22 @@ import category_encoders as ce
 #-----------------------------------------------------------------------------------------
 
 # Data Wrangling
-def fillna(data):
-    # filling null values w median, mode:
+def fillnulls(data):
+    # filling null values with median, mode:
     data['LotFrontage'] = data['LotFrontage'].fillna(data['LotFrontage'].median())
     data['MasVnrType'] = data['MasVnrType'].fillna(data['MasVnrType'].mode()[0])
     data['BsmtExposure'] = data['BsmtExposure'].fillna(data['BsmtExposure'].mode()[0])
     data['Electrical'] = data['Electrical'].fillna(data['Electrical'].mode()[0])
     data['GarageYrBlt'] = data['GarageYrBlt'].fillna(data['GarageYrBlt'].median())
-    # filling null values w none or 0:
+    # filling null values with zero:
     data['MasVnrArea'] = data['MasVnrArea'].fillna(0)
-    data['BsmtQual'] = data['BsmtQual'].fillna('None')
-    data['BsmtCond'] = data['BsmtCond'].fillna('None')
-    data['BsmtCond'] = data['BsmtCond'].fillna('None')
-    data['BsmtFinType2'] = data['BsmtFinType2'].fillna('None')
-    data['BsmtFinType1'] = data['BsmtFinType1'].fillna('None')
-    data['FireplaceQu'] =  data['FireplaceQu'].fillna('None')
-    data['MiscFeature'] = data['MiscFeature'].fillna('None')
-    # for loop deals with imputing the list of columns to none:
-    for column in ['GarageType', 'GarageFinish', 'GarageQual', 'GarageCond']:
-        data[column] = data[column].fillna('None')
+    # filling selected columns with np.nan (or 'None' if you want a string):
+    fill_cols = ['GarageType', 'GarageFinish', 'GarageQual', 'GarageCond', 
+                 'BsmtQual', 'BsmtCond', 'BsmtFinType2', 'BsmtFinType1', 'FireplaceQu', 'MiscFeature']
+    for column in fill_cols:
+        data[column] = data[column].fillna(np.nan)  # or 'None' for strings
     return data
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 

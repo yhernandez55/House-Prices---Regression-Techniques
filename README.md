@@ -40,6 +40,7 @@ to improve model performance. Combining these features reduced the dimensionalit
 The top 10 important features identified by the XGBoost model in order were: 
 - Id, LotArea, BsmtUnfSF, GrLivArea, LotFrontage,
 - TotalPorchSF, GarageArea, TotalSF, BsmtFinSF1, MasVnrArea.
+![image](https://github.com/user-attachments/assets/b0410fff-087f-4d5c-8622-813ee75f2b55)
 
 
 ## Evaluation:

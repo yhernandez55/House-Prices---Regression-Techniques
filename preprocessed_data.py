@@ -1,7 +1,7 @@
+# Section 1: 
 # inport the libaries that are going to be used:
 import pandas as pd
-from sklearn.model_selection import GridSearchCV, cross_val_score
-from sklearn.linear_model import LinearRegression, Lasso
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OrdinalEncoder
@@ -9,10 +9,11 @@ from sklearn.preprocessing import OneHotEncoder
 import category_encoders as ce
 import numpy as np
 from sklearn.impute import SimpleImputer
-import category_encoders as ce
+import matplotlib.pyplot as plt
 
 #-----------------------------------------------------------------------------------------
 
+# Section 2:
 # Data Wrangling
 def fillnulls(data):
     # filling null values with median, mode:
@@ -33,6 +34,7 @@ def fillnulls(data):
 
 # ----------------------------------------------------------------------------------------------------------------------------------
 
+# Section 3:
 # feature engineering:
 def ft_engineering(data):
     data['TotalSF'] = data['TotalBsmtSF'] + data['1stFlrSF'] + data['2ndFlrSF']
@@ -48,6 +50,7 @@ def ft_engineering(data):
 
 #-----------------------------------------------------------------------------------------------------------------------------------------
 
+# Section 4:
 # encoding: ordinal
 def ordinal_encode(data):
     # Define ordinal features

@@ -10,7 +10,7 @@ The training and test datasets provided by Kaggle include a total of 1,460 obser
 
 ## Exploratory Analysis (EDA):
 ### 1. Data Overview: 
-The first table in th eda portion of the main notebook [text](House_prices_regression_project.ipynb) shows the head of the training dataset, while the second table shows the statistics for each feature.  The second table includes information such as the mean, standard deviation, minimum value, first quartile, median (second quartile), third quartile, and maximum value. These statistics are important for understanding the overall distribution of the data without examining it in excessive detail.
+The first table in the eda portion of the main notebook [text](House_prices_regression_project.ipynb) shows the head of the training dataset, while the second table shows the statistics for each feature.  The second table includes information such as the mean, standard deviation, minimum value, first quartile, median (second quartile), third quartile, and maximum value. These statistics are important for understanding the overall distribution of the data without examining it in excessive detail.
 
 The following image shows the distribution of all numerical features along with the skewed values. These values and graphs helped determine how I would impute the features with null values.
 Id                0.000000
@@ -72,10 +72,10 @@ The additional features I had to impute in the test set and the methods I used w
 ### 3. Target Variable Analysis:
 These two plots show the analysis of the target variable, SalePrice.
 
-Boxplot:
+#### Boxplot:
 ![alt text](images_in_report/image-target_boxplot.png) 
 
-Histogram:
+#### Histogram:
 ![alt text](images_in_report/image-target_hist.png)
 
 Individual statistics of SalePrice:
@@ -96,9 +96,9 @@ Additionally, the histogram shows that the data is highly skewed to the right.
 ### 4. Feature Correlation:
 The following images show the correlations between features and how strongly they relate to each other. This information is useful for determining how to handle the features when the goal is to reduce dimensionality. The first image displays the correlations of all features with one another, while the second one highlights only the strong correlations.
 
-Heatmap with all features:
+#### Heatmap with all features:
 ![alt text](images_in_report/image-heatmap.png)
-Heatmap highlighting the important features:
+#### Heatmap highlighting the important features:
 ![alt text](images_in_report/image-heapmap_important.png)
 
 These values and this bar plot show the top 10 features correlated with the target variable, SalePrice, ranked from the highest to the lowest correlation.
@@ -115,7 +115,7 @@ TotRmsAbvGrd    0.533723
 YearBuilt       0.522897
 Name: SalePrice, dtype: float64
 
-Top 10 Correlated Features with SalePrice:
+#### Top 10 Correlated Features with SalePrice:
 ![alt text](images_in_report/image-top10_corr_ft.png)
 
 Based on both the heatmap and the bar chart, we can infer how the features rank, from the most important to the least, as follows:
@@ -142,43 +142,45 @@ dtype: int64
 
 Based on the plots above, we could explore the selected features further by examining count plots, box plots, and scatter plots.
 
-Count plot for the OverallQual Distribution:
+#### Count plot for the OverallQual Distribution:
 ![alt text](images_in_report/image-OverallQual_Distribution.png)
 
-Boxplot of SalePrice by OverallQual:
+#### Boxplot of SalePrice by OverallQual:
 ![alt text](images_in_report/image-OveallQual_Boxplot..png)
 
 This horizontal bar plot of OverallQual shows the distribution of each rating score in the dataset. This feature represents each home's overall quality rating on a scale from 1 to 10, where 1 denotes very poor quality and 10 denotes extraordinary quality. The distribution indicates that the most common values are between 5 and 6, suggesting these ratings are the most frequently used in the dataset.
 
 The behavior of the OverallQual feature in relation to the SalePrice target variable is shown in the box plot. We observe a clear pattern where better overall quality is associated with higher prices, indicating a positive correlation between OverallQual and SalePrice. The outliers are more scattered for ratings between 8 and 10 than for ratings between 1 and 3.
 
-Count plot for FullBath variable:
+#### Count plot for FullBath variable:
 ![alt text](images_in_report/image-FullBath_countplot.png)
 
-Boxplot of SalePrice by FullBath:
+#### Boxplot of SalePrice by FullBath:
 ![alt text](images_in_report/image-FullBath_Boxplot.png)
 
-Count plot for HalfBath variable:
+#### Count plot for HalfBath variable:
 ![alt text](images_in_report/image-HalfBath_countplot.png)
 
-Boxplot of SalePrice by HalfBath:
+#### Boxplot of SalePrice by HalfBath:
 ![alt text](images_in_report/image-HalfBath_Boxplot.png)
 
 The distribution of the FullBath and HalfBath features, which indicate the number of full and half bathrooms in the dataset, is displayed in the horizontal bar graphs. According to the FullBath plot, most homes have either one or two complete bathrooms, with two being the most common. The HalfBath plot, on the other hand, shows that most homes lack half bathrooms (0).
 
 Houses with more full bathrooms tend to have higher prices, according to the first box plot. However, a less clear trend is observed in the second box plot for half bathrooms. The most outlier-prone values for full bathrooms are 1 and 2, with outliers for 2 being more dispersed than those for 1. Outliers are more common for half bathrooms at 0 and 1, with outliers for 1 being more widely distributed. We also see that outliers for homes with three full bathrooms tend to lean toward higher values.
 
-Count plot for a TotRmsAbvGrd variable:
+#### Count plot for a TotRmsAbvGrd variable:
 ![alt text](images_in_report/image-TotRmsAbvGrd_countplot.png)
 
-Boxplot of SalePrice by TotRmsAbvGrd:
+#### Boxplot of SalePrice by TotRmsAbvGrd:
 ![alt text](images_in_report/image-TotRmsAbvGrd_countplot.png)
 
 The distribution of the total rooms above grade (TotRmsAbvGrd, excluding bathrooms) is shown in the count plot. While fewer homes have between 9 and 12 rooms or just 3 rooms, the majority of observations fall in the 6–7 room range.
 
 The box plot clearly shows that SalePrice tends to increase with the number of rooms. However, a noteworthy feature is the presence of outliers, particularly in the lower room ranges. This suggests that other factors besides room count may influence the price of homes with fewer rooms.
 
-The next four subplots show the relationships between SalePrice and the following features: GrLivArea, TotalBsmtSF, 1stFlrSF, and GarageArea:
+The next four subplots show the relationships between SalePrice and the following features: 
+
+#### GrLivArea, TotalBsmtSF, 1stFlrSF, and GarageArea:
 ![alt text](images_in_report/image-subplots.png)
 
 The four scatter plots demonstrate how certain factors affect the target variable by showing the relationship between SalePrice and these features. All of these graphs show a positive correlation, meaning that SalePrice tends to rise with each feature's value. However, each plot presents a different perspective.
@@ -224,10 +226,10 @@ In summary, I chose to combine these features both based on logic and correlatio
 
 ### Section 4:
     7. Encoding:
-This final section of the Python file outlines the methods used to encode the categorical variables for both the training and testing datasets. The encoding methods I used include: ordinal encoding, target encoding, one-hot encoding, and the .map function for 'CentralAir'.
+This final section of the Python file outlines the methods used to encode the categorical variables for both the training and testing datasets. The encoding methods I used include ordinal encoding, target encoding, one-hot encoding, and the .map function for 'CentralAir'.
 
 #### Ordinal Encoding:
-The features I used for ordinal encoding were: 'LotShape', 'LandSlope', 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond'. These features have values that represent a ranking order. This is valuable when considering better conditions and higher quality, which can influence the SalePrice. For example, features like 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond' have quality levels that range from Excellent (Ex) to Poor (Po). This ranking helps predict the sale price: for instance, a kitchen quality of 5 (Excellent) would likely result in a higher price compared to a quality of 3 (Average). Additionally, 'LotShape' and 'LandSlope' describe the lot's regularity and slope, which affects the usability and desirability of the lot, potentially influencing SalePrice. Features like 'BsmtExposure', 'BsmtFinType1', and 'BsmtFinType2' have a natural progression, where they can be ranked based on quality or desirability. For instance, 'BsmtFinType1' and 'BsmtFinType2' describe the basement's finish, with quality ranging from GLQ (Good Living Quarters) to Unf (Unfinished), while 'BsmtExposure' refers to basement exposure to sunlight, with better exposure being more desirable.
+The features I used for ordinal encoding were: 'LotShape', 'LandSlope', 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond'. These features have values that represent a ranking order. This is valuable when considering better conditions and higher quality, which can influence the SalePrice. For example, features like 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond' have quality levels that range from Excellent (Ex) to Poor (Po). This ranking helps predict the sale price: for instance, a kitchen quality of 5 (Excellent) would likely result in a higher price compared to a quality of 3 (Average). Additionally, 'LotShape' and 'LandSlope' describe the lot's regularity and slope, which affect the usability and desirability of the lot, potentially influencing SalePrice. Features like 'BsmtExposure', 'BsmtFinType1', and 'BsmtFinType2' have a natural progression, where they can be ranked based on quality or desirability. For instance, 'BsmtFinType1' and 'BsmtFinType2' describe the basement's finish, with quality ranging from GLQ (Good Living Quarters) to Unf (Unfinished), while 'BsmtExposure' refers to basement exposure to sunlight, with better exposure being more desirable.
 
 After performing ordinal encoding, some columns had null values. I handled this by using the impute_train and impute_test functions, and for imputation, I used the choose_imputation_strategy function for both.
 
@@ -245,19 +247,19 @@ For the testing dataset, I followed the same preprocessing steps as for the trai
 
 
 ## Modeling:
-The RMSE scores for the three distinct model types and their corresponding parameters are compared in the table below. The models under evaluation include XGBoost, Linear Regression, and Neural Networks. Root Mean Squared Error (RMSE) is used to assess each model's performance. The purpose of this research is to evaluate the models' performance in predicting home prices by minimizing RMSE, a widely used statistic for comparing predicted and actual values.
+The RMSE scores for the three distinct model types and their corresponding parameters are compared in the table below. The models under evaluation include XGBoost, linear regression, and neural networks. Root Mean Squared Error (RMSE) is used to assess each model's performance. The purpose of this research is to evaluate the models' performance in predicting home prices by minimizing RMSE, a widely used statistic for comparing predicted and actual values.
 
 | Type of Model    | Score: RMSE  | Parameters
 |------------------|--------------|------------
 | Linear regression| 0.18864      | Basic Linear regression
-| Neural Networks  | 0.18494      | 3 Dense layers: 24, 64, 1 with input_dim=151
+| Neural Networks  | 0.18494      | 3 dense layers: 24, 64, 1 with input_dim=151
 | XGBOOST          | 0.13149      | Indepth parameters.
 
 1. Linear Regression: Based on the table, the RMSE seems to be higher than the rest since this linear regression model appears to be basic. Linear regression models assume a linear relationship between the independent and dependent variables, meaning they attempt to fit a straight line to the data. This assumption holds in the case of simple and multiple linear regression models, excluding any variations such as polynomial regression.
 
 2. Neural Networks: Neural networks provide a slightly better rmse score than linear regression but do not outperform XGBOOST. Even though both XGBOOST and neural networks have flexibility in capturing non-linear relationships in the data, after trying multiple parameters in XGBOOST, I concluded that I should stick with XGBOOST since, based on the parameters of the neural networks and score, we can see that neural networks are more far off compared to XGBOOST.
 
-3. XGBOOST: This method outperformed the other two models since the parameters were more in-depth. This approach handles a complex relationship between each feature and its target within its data. When it comes to house price predictions, we can say that this method seems to have less computation cost compared to neural networks; therefore, when working on this project, I decided to explore XGBOOST more. The parameters used for this model were: 
+3. XGBOOST: This method outperformed the other two models since the parameters were more in-depth. This approach handles a complex relationship between each feature and its target within its data. When it comes to house price predictions, we can say that this method seems to have less computation cost compared to neural networks; therefore, when working on this project, I decided to explore XGBOOST more. The parameters used for this model were:
 params = {
     'objective': 'reg:squarederror', # learning task
     'eval_metric': 'rmse', # root_means_squared
@@ -281,6 +283,7 @@ The XGBoost model was fine-tuned during training, and it achieved a validation R
 The model has practical applications in the real estate sector. Sellers can use it to price properties competitively, while developers can assess property values before listing. Financial institutions might integrate the model into loan approval processes, and buyers or investors can use it to evaluate whether listed prices are reasonable.
 
 In conclusion, this project demonstrates how effective feature engineering, data preprocessing, and model tuning can address regression problems, providing valuable insights for stakeholders in the housing market.
+
 
 ## References:
 https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview

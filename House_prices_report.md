@@ -10,13 +10,7 @@ The training and test datasets provided by Kaggle include a total of 1,460 obser
 
 ## Exploratory Analysis (EDA):
 ### 1. Data Overview: 
-The first table shows the head of the training dataset, while the second table shows the statistics for each feature. 
-
-<IPython.core.display.Markdown object>
-
-The second table includes information such as the mean, standard deviation, minimum value, first quartile, median (second quartile), third quartile, and maximum value. These statistics are important for understanding the overall distribution of the data without examining it in excessive detail.
-
-<IPython.core.display.Markdown object>
+The first table in th eda portion of the main notebook [text](House_prices_regression_project.ipynb) shows the head of the training dataset, while the second table shows the statistics for each feature.  The second table includes information such as the mean, standard deviation, minimum value, first quartile, median (second quartile), third quartile, and maximum value. These statistics are important for understanding the overall distribution of the data without examining it in excessive detail.
 
 The following image shows the distribution of all numerical features along with the skewed values. These values and graphs helped determine how I would impute the features with null values.
 Id                0.000000

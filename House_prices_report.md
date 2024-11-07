@@ -72,7 +72,7 @@ The additional features I had to impute in the test set and the methods I used w
 ### 3. Target Variable Analysis:
 These two plots show the analysis of the target variable, SalePrice.
 
-#### Boxplot:
+Boxplot:
 ![alt text](images_in_report/image-target_boxplot.png) 
 
 Histogram:

@@ -72,10 +72,10 @@ The additional features I had to impute in the test set and the methods I used w
 ### 3. Target Variable Analysis:
 These two plots show the analysis of the target variable, SalePrice.
 
-Boxplot:
+#### Boxplot:
 ![alt text](images_in_report/image-target_boxplot.png) 
 
-Histogram:
+#### Histogram:
 ![alt text](images_in_report/image-target_hist.png)
 
 Individual statistics of SalePrice:
@@ -96,9 +96,9 @@ Additionally, the histogram shows that the data is highly skewed to the right.
 ### 4. Feature Correlation:
 The following images show the correlations between features and how strongly they relate to each other. This information is useful for determining how to handle the features when the goal is to reduce dimensionality. The first image displays the correlations of all features with one another, while the second one highlights only the strong correlations.
 
-Heatmap with all features:
+#### Heatmap with all features:
 ![alt text](images_in_report/image-heatmap.png)
-Heatmap highlighting the important features:
+#### Heatmap highlighting the important features:
 ![alt text](images_in_report/image-heapmap_important.png)
 
 These values and this bar plot show the top 10 features correlated with the target variable, SalePrice, ranked from the highest to the lowest correlation.
@@ -115,7 +115,7 @@ TotRmsAbvGrd    0.533723
 YearBuilt       0.522897
 Name: SalePrice, dtype: float64
 
-Top 10 Correlated Features with SalePrice:
+#### Top 10 Correlated Features with SalePrice:
 ![alt text](images_in_report/image-top10_corr_ft.png)
 
 Based on both the heatmap and the bar chart, we can infer how the features rank, from the most important to the least, as follows:
@@ -142,43 +142,45 @@ dtype: int64
 
 Based on the plots above, we could explore the selected features further by examining count plots, box plots, and scatter plots.
 
-Count plot for the OverallQual Distribution:
+#### Count plot for the OverallQual Distribution:
 ![alt text](images_in_report/image-OverallQual_Distribution.png)
 
-Boxplot of SalePrice by OverallQual:
+#### Boxplot of SalePrice by OverallQual:
 ![alt text](images_in_report/image-OveallQual_Boxplot..png)
 
 This horizontal bar plot of OverallQual shows the distribution of each rating score in the dataset. This feature represents each home's overall quality rating on a scale from 1 to 10, where 1 denotes very poor quality and 10 denotes extraordinary quality. The distribution indicates that the most common values are between 5 and 6, suggesting these ratings are the most frequently used in the dataset.
 
 The behavior of the OverallQual feature in relation to the SalePrice target variable is shown in the box plot. We observe a clear pattern where better overall quality is associated with higher prices, indicating a positive correlation between OverallQual and SalePrice. The outliers are more scattered for ratings between 8 and 10 than for ratings between 1 and 3.
 
-Count plot for FullBath variable:
+#### Count plot for FullBath variable:
 ![alt text](images_in_report/image-FullBath_countplot.png)
 
-Boxplot of SalePrice by FullBath:
+#### Boxplot of SalePrice by FullBath:
 ![alt text](images_in_report/image-FullBath_Boxplot.png)
 
-Count plot for HalfBath variable:
+#### Count plot for HalfBath variable:
 ![alt text](images_in_report/image-HalfBath_countplot.png)
 
-Boxplot of SalePrice by HalfBath:
+#### Boxplot of SalePrice by HalfBath:
 ![alt text](images_in_report/image-HalfBath_Boxplot.png)
 
 The distribution of the FullBath and HalfBath features, which indicate the number of full and half bathrooms in the dataset, is displayed in the horizontal bar graphs. According to the FullBath plot, most homes have either one or two complete bathrooms, with two being the most common. The HalfBath plot, on the other hand, shows that most homes lack half bathrooms (0).
 
 Houses with more full bathrooms tend to have higher prices, according to the first box plot. However, a less clear trend is observed in the second box plot for half bathrooms. The most outlier-prone values for full bathrooms are 1 and 2, with outliers for 2 being more dispersed than those for 1. Outliers are more common for half bathrooms at 0 and 1, with outliers for 1 being more widely distributed. We also see that outliers for homes with three full bathrooms tend to lean toward higher values.
 
-Count plot for a TotRmsAbvGrd variable:
+#### Count plot for a TotRmsAbvGrd variable:
 ![alt text](images_in_report/image-TotRmsAbvGrd_countplot.png)
 
-Boxplot of SalePrice by TotRmsAbvGrd:
+#### Boxplot of SalePrice by TotRmsAbvGrd:
 ![alt text](images_in_report/image-TotRmsAbvGrd_countplot.png)
 
 The distribution of the total rooms above grade (TotRmsAbvGrd, excluding bathrooms) is shown in the count plot. While fewer homes have between 9 and 12 rooms or just 3 rooms, the majority of observations fall in the 6–7 room range.
 
 The box plot clearly shows that SalePrice tends to increase with the number of rooms. However, a noteworthy feature is the presence of outliers, particularly in the lower room ranges. This suggests that other factors besides room count may influence the price of homes with fewer rooms.
 
-The next four subplots show the relationships between SalePrice and the following features: GrLivArea, TotalBsmtSF, 1stFlrSF, and GarageArea:
+The next four subplots show the relationships between SalePrice and the following features: 
+
+#### GrLivArea, TotalBsmtSF, 1stFlrSF, and GarageArea:
 ![alt text](images_in_report/image-subplots.png)
 
 The four scatter plots demonstrate how certain factors affect the target variable by showing the relationship between SalePrice and these features. All of these graphs show a positive correlation, meaning that SalePrice tends to rise with each feature's value. However, each plot presents a different perspective.

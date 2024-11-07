@@ -256,8 +256,7 @@ The RMSE scores for the three distinct model types and their corresponding param
 | Type of Model    | Score: RMSE  | Parameters
 |------------------|--------------|------------
 | Linear regression| 0.18864      | Basic Linear regression
-| Neural Networks  | 0.18494      | 3 Dense layers: 24,64, 1 
-                   |              | with input_dim=151
+| Neural Networks  | 0.18494      | 3 Dense layers: 24, 64, 1 with input_dim=151
 | XGBOOST          | 0.13149      | Indepth parameters.
 
 1. Linear Regression: Based on the table, the RMSE seems to be higher than the rest since this linear regression model appears to be basic. Linear regression models assume a linear relationship between the independent and dependent variables, meaning they attempt to fit a straight line to the data. This assumption holds in the case of simple and multiple linear regression models, excluding any variations such as polynomial regression.

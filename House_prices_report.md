@@ -10,7 +10,7 @@ The training and test datasets provided by Kaggle include a total of 1,460 obser
 
 ## Exploratory Analysis (EDA):
 ### 1. Data Overview: 
-The first table in th eda portion of the main notebook [text](House_prices_regression_project.ipynb) shows the head of the training dataset, while the second table shows the statistics for each feature.  The second table includes information such as the mean, standard deviation, minimum value, first quartile, median (second quartile), third quartile, and maximum value. These statistics are important for understanding the overall distribution of the data without examining it in excessive detail.
+The first table in the eda portion of the main notebook [text](House_prices_regression_project.ipynb) shows the head of the training dataset, while the second table shows the statistics for each feature.  The second table includes information such as the mean, standard deviation, minimum value, first quartile, median (second quartile), third quartile, and maximum value. These statistics are important for understanding the overall distribution of the data without examining it in excessive detail.
 
 The following image shows the distribution of all numerical features along with the skewed values. These values and graphs helped determine how I would impute the features with null values.
 Id                0.000000
@@ -226,10 +226,10 @@ In summary, I chose to combine these features both based on logic and correlatio
 
 ### Section 4:
     7. Encoding:
-This final section of the Python file outlines the methods used to encode the categorical variables for both the training and testing datasets. The encoding methods I used include: ordinal encoding, target encoding, one-hot encoding, and the .map function for 'CentralAir'.
+This final section of the Python file outlines the methods used to encode the categorical variables for both the training and testing datasets. The encoding methods I used include ordinal encoding, target encoding, one-hot encoding, and the .map function for 'CentralAir'.
 
 #### Ordinal Encoding:
-The features I used for ordinal encoding were: 'LotShape', 'LandSlope', 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond'. These features have values that represent a ranking order. This is valuable when considering better conditions and higher quality, which can influence the SalePrice. For example, features like 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond' have quality levels that range from Excellent (Ex) to Poor (Po). This ranking helps predict the sale price: for instance, a kitchen quality of 5 (Excellent) would likely result in a higher price compared to a quality of 3 (Average). Additionally, 'LotShape' and 'LandSlope' describe the lot's regularity and slope, which affects the usability and desirability of the lot, potentially influencing SalePrice. Features like 'BsmtExposure', 'BsmtFinType1', and 'BsmtFinType2' have a natural progression, where they can be ranked based on quality or desirability. For instance, 'BsmtFinType1' and 'BsmtFinType2' describe the basement's finish, with quality ranging from GLQ (Good Living Quarters) to Unf (Unfinished), while 'BsmtExposure' refers to basement exposure to sunlight, with better exposure being more desirable.
+The features I used for ordinal encoding were: 'LotShape', 'LandSlope', 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'BsmtExposure', 'BsmtFinType1', 'BsmtFinType2', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond'. These features have values that represent a ranking order. This is valuable when considering better conditions and higher quality, which can influence the SalePrice. For example, features like 'ExterQual', 'ExterCond', 'BsmtQual', 'BsmtCond', 'HeatingQC', 'KitchenQual', 'FireplaceQu', 'GarageQual', and 'GarageCond' have quality levels that range from Excellent (Ex) to Poor (Po). This ranking helps predict the sale price: for instance, a kitchen quality of 5 (Excellent) would likely result in a higher price compared to a quality of 3 (Average). Additionally, 'LotShape' and 'LandSlope' describe the lot's regularity and slope, which affect the usability and desirability of the lot, potentially influencing SalePrice. Features like 'BsmtExposure', 'BsmtFinType1', and 'BsmtFinType2' have a natural progression, where they can be ranked based on quality or desirability. For instance, 'BsmtFinType1' and 'BsmtFinType2' describe the basement's finish, with quality ranging from GLQ (Good Living Quarters) to Unf (Unfinished), while 'BsmtExposure' refers to basement exposure to sunlight, with better exposure being more desirable.
 
 After performing ordinal encoding, some columns had null values. I handled this by using the impute_train and impute_test functions, and for imputation, I used the choose_imputation_strategy function for both.
 
@@ -247,19 +247,19 @@ For the testing dataset, I followed the same preprocessing steps as for the trai
 
 
 ## Modeling:
-The RMSE scores for the three distinct model types and their corresponding parameters are compared in the table below. The models under evaluation include XGBoost, Linear Regression, and Neural Networks. Root Mean Squared Error (RMSE) is used to assess each model's performance. The purpose of this research is to evaluate the models' performance in predicting home prices by minimizing RMSE, a widely used statistic for comparing predicted and actual values.
+The RMSE scores for the three distinct model types and their corresponding parameters are compared in the table below. The models under evaluation include XGBoost, linear regression, and neural networks. Root Mean Squared Error (RMSE) is used to assess each model's performance. The purpose of this research is to evaluate the models' performance in predicting home prices by minimizing RMSE, a widely used statistic for comparing predicted and actual values.
 
 | Type of Model    | Score: RMSE  | Parameters
 |------------------|--------------|------------
 | Linear regression| 0.18864      | Basic Linear regression
-| Neural Networks  | 0.18494      | 3 Dense layers: 24, 64, 1 with input_dim=151
+| Neural Networks  | 0.18494      | 3 dense layers: 24, 64, 1 with input_dim=151
 | XGBOOST          | 0.13149      | Indepth parameters.
 
 1. Linear Regression: Based on the table, the RMSE seems to be higher than the rest since this linear regression model appears to be basic. Linear regression models assume a linear relationship between the independent and dependent variables, meaning they attempt to fit a straight line to the data. This assumption holds in the case of simple and multiple linear regression models, excluding any variations such as polynomial regression.
 
 2. Neural Networks: Neural networks provide a slightly better rmse score than linear regression but do not outperform XGBOOST. Even though both XGBOOST and neural networks have flexibility in capturing non-linear relationships in the data, after trying multiple parameters in XGBOOST, I concluded that I should stick with XGBOOST since, based on the parameters of the neural networks and score, we can see that neural networks are more far off compared to XGBOOST.
 
-3. XGBOOST: This method outperformed the other two models since the parameters were more in-depth. This approach handles a complex relationship between each feature and its target within its data. When it comes to house price predictions, we can say that this method seems to have less computation cost compared to neural networks; therefore, when working on this project, I decided to explore XGBOOST more. The parameters used for this model were: 
+3. XGBOOST: This method outperformed the other two models since the parameters were more in-depth. This approach handles a complex relationship between each feature and its target within its data. When it comes to house price predictions, we can say that this method seems to have less computation cost compared to neural networks; therefore, when working on this project, I decided to explore XGBOOST more. The parameters used for this model were:
 params = {
     'objective': 'reg:squarederror', # learning task
     'eval_metric': 'rmse', # root_means_squared
@@ -283,6 +283,7 @@ The XGBoost model was fine-tuned during training, and it achieved a validation R
 The model has practical applications in the real estate sector. Sellers can use it to price properties competitively, while developers can assess property values before listing. Financial institutions might integrate the model into loan approval processes, and buyers or investors can use it to evaluate whether listed prices are reasonable.
 
 In conclusion, this project demonstrates how effective feature engineering, data preprocessing, and model tuning can address regression problems, providing valuable insights for stakeholders in the housing market.
+
 
 ## References:
 https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview

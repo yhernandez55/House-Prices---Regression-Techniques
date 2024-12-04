@@ -2,7 +2,7 @@
 
 
 ## Summary: 
-This project aimed to predict house sale prices using machine learning techniques in Python. After preparing the data to reduce dimensionality, I tested models such as Linear Regression and Random Forest, while making several submissions (not included in the notebook). Based on the Root Mean Squared Error (RMSE), I found that XGBoost was the most efficient model due to its ability to handle more parameters effectively. Key features used in the model included 'TotalSF', 'LotArea', and 'GrLivArea'. In conclusion, XGBoost provided the best balance between efficiency and accuracy for forecasting house prices.
+This project aimed to predict house sale prices using machine learning techniques in Python. After preparing the data to reduce dimensionality, I tested models such as Linear Regression and Random Forest, while making several submissions (not included in the notebook). Based on the Logarithmic Root Mean Squared Error (LOG RMSE), I found that XGBoost was the most efficient model due to its ability to handle more parameters effectively. Key features used in the model included 'TotalSF', 'LotArea', and 'GrLivArea'. In conclusion, XGBoost provided the best balance between efficiency and accuracy for forecasting house prices.
 
 
 ## DataSet info:
@@ -18,7 +18,7 @@ The training dataset contains 81 features, while the test dataset contains 80 fe
 ## Techniques used:
 - Visualizing data distributions with histograms: Used to assess feature skewness for imputation and to understand the data better. An image of the histograms is included to illustrate these distributions.
 ![image](https://github.com/user-attachments/assets/0621e81b-644f-4ee2-835c-110550c19f6c)
-- Data preparation for the training set before evaluating the model involved handling missing values, encoding categorical variables, and feature scaling to ensure the dataset was ready for modeling. To keep the notebook clean, organized, and efficient, the data preparation process was summarized within a pipeline, which was written in a separate Python file.
+- Data preparation for the training set before evaluating the model involved handling missing values, encoding categorical variables, and feature scaling to ensure the dataset was ready for modeling. To keep the notebook clean, organized, and efficient, the data preparation process was summarized within a pipeline written in a separate Python file. 
 - Test set preparation for final prediction: The same Python script used for the training data was applied to the test set. This ensures consistency in imputation and encoding, maintaining the integrity of the model evaluation and preventing data leakage.
 - XGBoost: Employed the DMatrix to improve training speed and memory efficiency.
 
@@ -46,7 +46,7 @@ Below is a chart of the list of top 10 most import features in order.
 
 
 ## Evaluation:
-The model's performance was evaluated using the Root Mean Squared Error (RMSE) between the logarithms of the predicted values and the observed sales prices.
+The model's performance was evaluated using the Logarithmic Root Mean Squared Error (LOG RMSE) between the logarithms of the predicted values and the observed sales prices.
 
 
 ## Results and conclusion:

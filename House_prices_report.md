@@ -2,7 +2,7 @@
 
 ## Introduction:
 ### 1. Project Overview:
-The purpose of this project is to predict the sales price for each house. For each ID in the test set, I predicted the value of the SalePrice variable and submitted it to Kaggle. This project submission is evaluated based on the Root Mean Squared Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. The goal was to achieve a score in the top 25%, and my RMSE score was 0.13149.
+The purpose of this project is to predict the sales price for each house. For each ID in the test set, I predicted the value of the SalePrice variable and submitted it to Kaggle. This project submission is evaluated based on the Root Mean Squared Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. The goal was to achieve a score in the top 25%, and my Logarithmic RMSE (LOG RMSE) score was 0.13149.
 
 ### 2. Dataset Description:
 The training and test datasets provided by Kaggle include a total of 1,460 observations. The training set has 80 features (including SalePrice), while the test set has 79 features (excluding SalePrice). This dataset contains a mix of numerical and categorical data, which is useful for predicting SalePrice.
@@ -247,7 +247,7 @@ For the testing dataset, I followed the same preprocessing steps as for the trai
 
 
 ## Modeling:
-The RMSE scores for the three distinct model types and their corresponding parameters are compared in the table below. The models under evaluation include XGBoost, Linear Regression, and Neural Networks. Root Mean Squared Error (RMSE) is used to assess each model's performance. The purpose of this research is to evaluate the models' performance in predicting home prices by minimizing RMSE, a widely used statistic for comparing predicted and actual values.
+The Logarithmic RMSE (LOG RMSE) scores for the three distinct model types and their corresponding parameters are compared in the table below. The models under evaluation include XGBoost, Linear Regression, and Neural Networks. The LOG RMSE is used to assess each model's performance. The purpose of this research is to evaluate the models' performance in predicting home prices by minimizing the LOG RMSE, a widely used statistic for comparing predicted and actual values.
 
 | Type of Model    | Score: RMSE  | Parameters
 |------------------|--------------|------------
@@ -255,9 +255,9 @@ The RMSE scores for the three distinct model types and their corresponding param
 | Neural Networks  | 0.18494      | 3 Dense layers: 24, 64, 1 with input_dim=151
 | XGBOOST          | 0.13149      | Indepth parameters.
 
-1. Linear Regression: Based on the table, the RMSE seems to be higher than the rest since this linear regression model appears to be basic. Linear regression models assume a linear relationship between the independent and dependent variables, meaning they attempt to fit a straight line to the data. This assumption holds in the case of simple and multiple linear regression models, excluding any variations such as polynomial regression.
+1. Linear Regression: Based on the table, the LOG RMSE seems to be higher than the rest since this linear regression model appears to be basic. Linear regression models assume a linear relationship between the independent and dependent variables, meaning they attempt to fit a straight line to the data. This assumption holds in the case of simple and multiple linear regression models, excluding any variations such as polynomial regression.
 
-2. Neural Networks: Neural networks provide a slightly better rmse score than linear regression but do not outperform XGBOOST. Even though both XGBOOST and neural networks have flexibility in capturing non-linear relationships in the data, after trying multiple parameters in XGBOOST, I concluded that I should stick with XGBOOST since, based on the parameters of the neural networks and score, we can see that neural networks are more far off compared to XGBOOST.
+2. Neural Networks: Neural networks provide a slightly better LOG RMSE score than linear regression but do not outperform XGBOOST. Even though both XGBOOST and neural networks have flexibility in capturing non-linear relationships in the data, after trying multiple parameters in XGBOOST, I concluded that I should stick with XGBOOST since, based on the parameters of the neural networks and score, we can see that neural networks are more far off compared to XGBOOST.
 
 3. XGBOOST: This method outperformed the other two models since the parameters were more in-depth. This approach handles a complex relationship between each feature and its target within its data. When it comes to house price predictions, we can say that this method seems to have less computation cost compared to neural networks; therefore, when working on this project, I decided to explore XGBOOST more. The parameters used for this model were: 
 params = {
@@ -278,7 +278,7 @@ params = {
 ## Conclusion: 
 For this project, I developed an XGBoost model to predict property prices using various dataset features. I began by classifying the data and handling missing values with different imputation methods. Feature engineering techniques, including dimensionality reduction and encoding categorical variables (one-hot, target, ordinal), were applied to improve performance.
 
-The XGBoost model was fine-tuned during training, and it achieved a validation RMSE of 0.1218. The model's Kaggle score was 0.13149. During EDA, I identified the top 10 features most correlated with SalePrice, including OverallQual, GrLivArea, and GarageArea. After training the model, feature importance analysis highlighted Id, LotArea, and GrLivArea as the top predictors. Notably, GrLivArea and GarageArea appeared in both lists, demonstrating their strong predictive power in the model.
+The XGBoost model was fine-tuned during training, and it achieved a validation LOG RMSE of 0.1218. The model's Kaggle score was 0.13149. During EDA, I identified the top 10 features most correlated with SalePrice, including OverallQual, GrLivArea, and GarageArea. After training the model, feature importance analysis highlighted Id, LotArea, and GrLivArea as the top predictors. Notably, GrLivArea and GarageArea appeared in both lists, demonstrating their strong predictive power in the model.
 
 The model has practical applications in the real estate sector. Sellers can use it to price properties competitively, while developers can assess property values before listing. Financial institutions might integrate the model into loan approval processes, and buyers or investors can use it to evaluate whether listed prices are reasonable.
 

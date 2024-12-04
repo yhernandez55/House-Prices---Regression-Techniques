@@ -2,7 +2,7 @@
 
 ## Introduction:
 ### 1. Project Overview:
-The purpose of this project is to predict the sales price for each house. For each ID in the test set, I predicted the value of the SalePrice variable and submitted it to Kaggle. This project submission is evaluated based on the Root Mean Squared Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. The goal was to achieve a score in the top 25%, and my Logarithmic RMSE (LOG RMSE) score was 0.13149.
+The purpose of this project is to predict the sales price for each house. For each ID in the test set, I predicted the value of the SalePrice variable and submitted it to Kaggle. This project submission is evaluated based on the Root Mean Squared Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. The goal was to achieve a score in the top 25%, and my Logarithmic RMSE (LOG RMSE) score was 0.13149. 
 
 ### 2. Dataset Description:
 The training and test datasets provided by Kaggle include a total of 1,460 observations. The training set has 80 features (including SalePrice), while the test set has 79 features (excluding SalePrice). This dataset contains a mix of numerical and categorical data, which is useful for predicting SalePrice.

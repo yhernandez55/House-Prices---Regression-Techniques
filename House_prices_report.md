@@ -251,7 +251,7 @@ The Logrithmic RMSE (LOG RMSE) scores for the three distinct model types and the
 
 | Type of Model    | Score: RMSE  | Parameters
 |------------------|--------------|------------
-| Linear regression| 0.18864      | Basic Linear regression
+| Linear Regression| 0.18864      | Basic Linear Regression
 | Neural Networks  | 0.18494      | 3 dense layers: 24, 64, 1 with input_dim=151
 | XGBOOST          | 0.13149      | Indepth parameters.
 
